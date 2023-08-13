@@ -1,14 +1,14 @@
 # Pages
 
 Login Page
-<!-- -Create Account
--Login for Advisor/Admin -->
+-Create Account
+-Login for Advisor/Admin
 
-<!-- Advisor Home Page -->
+Advisor Home Page
 -Clients
 -Models
 -Contact us
 
-<!-- Admin Home Page -->
+Admin Home Page
 -Update Static Data
 -List of Securities
