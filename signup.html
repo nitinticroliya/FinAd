@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="loginStyle.css" />
     <link rel="stylesheet" href="Style.css">
     <script src="https://kit.fontawesome.com/0410a2da07.js" crossorigin="anonymous"></script>
-    <title>Login</title>
+    <title>Sign-up</title>
 </head>
 <body>
     <header>
@@ -27,9 +27,13 @@
     </header>
     <div class="container">
         <div class="form-box">
-            <h1 id="Title">User Log In</h1>
+            <h1 id="Title">User Sign Up</h1>
             <form>
                 <div class="input-group">
+                    <div class="input-field">
+                        <i class="fa-solid fa-user"></i>
+                        <input type="name" placeholder="Name" />
+                    </div>
                     <div class="input-field">
                         <i class="fa-solid fa-envelope"></i>
                         <input type="email" placeholder="E-Mail" />
@@ -41,15 +45,16 @@
                     <p>Forgot Password <a href="#">Click Here!</a></p>
                 </div>
                 <div class="btn-field">
-                    <button type="button" id="signinBtn">
-                        Sign In
+                    <button type="button" id="signupBtn">
+                        Sign Up
                     </button>
                 </div>
             </form>
         </div>
     </div>
     <script>
-        let signinBtn = document.getElementById("signinBtn");
+        let signupBtn = document.getElementById("signupBtn");
+        let NameField = document.getElementById("NameField");
         let Title = document.getElementById("Title");
     </script>
 </body>
