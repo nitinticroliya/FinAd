@@ -66,15 +66,15 @@ nextBtnThird.onclick = (e) => {
 //     current += 1;
 // });
 
-submitBtn.addEventListener("click", function(){
+submitBtn.onclick = (){
     bullet[current - 1].classList.add(active);
     progressCheck[current - 1].classList.add("active");
     progressText[current - 1].classList.add("active");
     current += 1;
-    setTimeout(function(){
-        alert("Sign up successful.");
-        location.reload();
-    },800);
+    // setTimeout(function(){
+    //     alert("Sign up successful, Login Now.");
+    //     location.reload();
+    // },800);
 });
 
 // prevBtnSec.addEventListener("click", function(event){
