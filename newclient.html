@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="newClientStyle.css" />
+    <title>New Client</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="left"> FinAd
+
+            </div>
+            <div class="right">
+                <ul>
+                    <li><a href="/">Clients</a></li>
+                    <li><a href="/">Models</a></li>
+                    <li><a href="/">Contact Us</a></li>
+                    <li><a href="/">Profile</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+<main>
+    <div class="container">
+        <h1>Personal Information</h1>
+        <form id="Form1"action="#" method="post">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name"  required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="contact">Contact Number</label>
+            <input type="tel" id="contact" name="contact" pattern="[0-9]{10}" required>
+            
+            <label for="pan">PAN Card Number</label>
+            <input type="text" id="pan" name="pan" placeholder="Format: ABCDE1234F" pattern="[A-Z]{5}[0-9]{4}[A-Z]{1}" required>
+            
+            <label for="aadhar">Aadhar Number</label>
+            <input type="text" id="aadhar" name="aadhar" placeholder="12-digit number" pattern="[0-9]{12}" required>
+
+            <label for="address">Address</label>
+            <textarea id="address" name="address" rows="4" required></textarea>
+
+            <label for="goal">Financial Goal</label>
+            <input type="text" id="goal" name="goal" required>
+            <div class="btn-box">
+                <button type="button" id="Next1">Next</button>
+            </div>
+            
+        </form>
+
+        <form id="Form2" action="#" method="post">
+            <h1>Risk Profile</h1>
+            <label for="q1">Q1</label>
+            1 <input type="radio" name="q1" value="" required>2<input type="radio" name="q1" value="" required> 3<input type="radio" name="q1" value="" required>4<input type="radio" name="q1" value="" required>5 <input type="radio" name="q1" value="" required>
+            <label for="q2">Q2</label>
+            1 <input type="radio" name="q2" value="" required>2<input type="radio" name="q2" value="" required> 3<input type="radio" name="q2" value="" required>4<input type="radio" name="q2" value="" required>5 <input type="radio" name="q2" value="" required>
+            <label for="q3">Q3</label>
+            1 <input type="radio" name="q3" value="" required>2<input type="radio" name="q3" value="" required> 3<input type="radio" name="q3" value="" required>4<input type="radio" name="q3" value="" required>5 <input type="radio" name="q3" value="" required>
+            <label for="q4">Q4</label>
+            1 <input type="radio" name="q4" value="" required>2<input type="radio" name="q4" value="" required> 3<input type="radio" name="q4" value="" required>4<input type="radio" name="q4" value="" required>5 <input type="radio" name="q4" value="" required>
+            <label for="q5">Q5</label>
+            1 <input type="radio" name="q5" value="" required>2<input type="radio" name="q5" value="" required> 3<input type="radio" name="q5" value="" required>4<input type="radio" name="q5" value="" required>5 <input type="radio" name="q5" value="" required>
+            
+            <div class="btn-box">
+                <button type="button" id="Back1">Back</button>
+                <button type="submit">Submit</button>
+            </div>
+
+           
+        </form>
+
+        <dvi class="step-row">
+            <div id="progress"></div>
+            <div class="step-col"><small>Step 1</small></div>
+            <div class="step-col"><small>Step 2</small></div>
+            <div class="step-col"><small>Step 3</small></div>
+        </dvi>
+
+    </div>
+
+    <script>
+
+        var Form1=document.getElementById("Form1");
+        var Form2=document.getElementById("Form2");
+        // var Form3=document.getElementById("Form3");
+
+        var Next1=document.getElementById("Next1");
+        var Back1=document.getElementById("Back1");
+
+        var progress=document.getElementById("progress");
+
+        Next1.onclick=function(){
+            Form1.style.left="-450px";
+            Form2.style.left="40px";
+            progress.style.width="240px";
+
+        }
+
+        Back1.onclick=function(){
+            Form1.style.left="40pxpx";
+            Form2.style.left="450px";
+            progre.style.width="120px";
+
+        }
+
+
+    </script>
+</main>>
+</body>
+</html>
