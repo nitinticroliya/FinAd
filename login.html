@@ -6,8 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="loginStyle.css" />
     <link rel="stylesheet" href="Style.css">
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <script src="https://kit.fontawesome.com/0410a2da07.js" crossorigin="anonymous"></script>
-    <title>Landing Page</title>
+    <title>Login</title>
 </head>
 <body>
     <header>
@@ -27,32 +28,28 @@
     </header>
     <div class="container">
         <div class="form-box">
-            <h1 id="Title">User Log In</h1>
+            <h1 id="Title">Advisor Log In</h1>
             <form>
                 <div class="input-group">
                     <div class="input-field">
                         <i class="fa-solid fa-envelope"></i>
-                        <input type="email" placeholder="E-Mail" />
+                        <input id="loginEmail" type="email" placeholder="E-Mail" />
                     </div>
                     <div class="input-field">
                         <i class="fa-solid fa-lock"></i>
-                        <input type="password" placeholder="Password" />
+                        <input id="loginPassword" type="password" placeholder="Password" />
                     </div>
-                    <p>Forgot Password <a href="#">Click Here!</a></p>
                 </div>
                 <div class="btn-field">
-                    <button type="button" id="signupBtn">Sign Up</button>
-                    <button type="button" id="signinBtn" class="disable">
-                        Sign In
+                    <button  type="button" id="signinBtn" >
+                        Log In
                     </button>
                 </div>
             </form>
         </div>
     </div>
-    <script>
-        let signinBtn = document.getElementById("signinBtn");
-        let Title = document.getElementById("Title");
-    </script>
+    <script src="login.js"></script>
+    
 </body>
 
 </html>

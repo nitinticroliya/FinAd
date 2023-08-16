@@ -20,6 +20,46 @@ body {
 
 }
 
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #3c00a0;
+    height: 60px;
+    position: fixed;
+}
+
+nav ul {
+    display: flex;
+    justify-content: end;
+}
+
+nav ul li {
+    list-style: none;
+    margin: 0 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+}
+
+nav ul li a:hover {
+    color: rgb(128, 128, 199);
+    font-size: 1.02rem;
+}
+
+.left {
+    font-size: 2rem;
+    margin: 0 20px;
+    width: 50%;
+}
+
+.right {
+    align-items: end;
+    width: 50%;
+}
+
 .container{
     width: 330px;
     background: #fff;
