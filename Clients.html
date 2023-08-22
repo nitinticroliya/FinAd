@@ -9,6 +9,7 @@
         integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <title>Advisor Home Page</title>
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 
 <body>
@@ -33,7 +34,40 @@
             <h2 class="col-10">Your Clients</h4>
             <button onclick="window.location.href='newclient.html';" class="btn btn-primary col-2" type="submit">Add new client</button>
         </div>
-        <div class="listofclients p-3 m-3">
+        <form id="form1" runat="server">  
+            <div class="container">
+                <table id="tblClients" class="table table-bordered text-center text-uppercase">  
+                    <thead id="clientTables" class="bg-primary text-white">  
+                        <tr>  
+                           
+                            <th>Name</th>  
+                            <th>E-Mail</th>  
+                            <th>Risk-Profile</th>  
+                            <th>Model</th>
+                        </tr>  
+                    </thead>  
+                    <tbody></tbody>  
+                </table>
+            </div>
+        </form>
+         
+        <!-- <div class="listofclients p-3 m-3" id="ClientsList">
+            <div class="client1 text-white text-center d-flex py-4 " style="border-bottom: 1px solid white; font-size: 1.5rem;">
+                
+                <div class="col-4" id="ClientName">
+                    Name
+                </div>
+                <div class="col-6" id="ClientRiskProfile">
+                    Risk Profile
+                </div>
+            
+                <div class="col-2">
+                    <button class="btn btn-primary d-flex px-2 py-0 btn-white" style="position: relative; right: -4rem;">
+                       <h3>...</h3>
+                    </button>
+                </div>
+            </div>
+            
             <div class="client1 text-white text-center d-flex py-4 " style="border-bottom: 1px solid white; font-size: 1.5rem;">
                 <div class="col-4">
                     Client1
@@ -60,20 +94,7 @@
                     </button>
                 </div>
             </div>
-            <div class="client1 text-white text-center d-flex py-4 " style="border-bottom: 1px solid white; font-size: 1.5rem;">
-                <div class="col-4">
-                    Client1
-                </div>
-                <div class="col-6">
-                    Risk Profile
-                </div>
-                <div class="col-2">
-                    <button class="btn btn-primary d-flex px-2 py-0 btn-white" style="position: relative; right: -4rem;">
-                       <h3>...</h3>
-                    </button>
-                </div>
-            </div>
-        </div>
+        </div> -->
     </div>
     <script src="Clients.js"></script>
 </body>

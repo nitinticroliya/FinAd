@@ -104,17 +104,7 @@
 
 $(document).ready(function () {
   document.getElementById("submitSignup").addEventListener("click", function (event) {
-    // bullet[current - 1].classList.add(active);
-    // progressCheck[current - 1].classList.add("active");
-    // progressText[current - 1].classList.add("active");
-    // current += 1;
-    // setTimeout(function(){
-    //     alert("Sign up successful, Login Now.");
-    //     location.reload();
-    // },800);
-
-
-
+    
     let Name = document.getElementById("advisorName").value;
     // let dob = document.getElementById("advisorDOB").value;
     // let gender = document.getElementById("advisorGender").value;
