@@ -28,7 +28,7 @@
 
     <section class="newModelInput">
         <label for="modelName">Name of Model: </label>
-        <input id="modelName" type="name"/>
+        <input id="modelName" type="name" />
         <br><br>
         <label for="risk">Choose a risk profile:</label>
         <select name="risk" id="risk" onchange="riskProfile()">
@@ -38,17 +38,27 @@
             <option value="VHR">High Risk</option>
         </select>
         <br><br>
+
         <div id="securityList">
 
         </div>
-        <button id="submitList">Submit</button>
-        <div id="newModelTable">
-            <tr class="bg-primary text-white">
-                <th>Name of Security</th>
-                <th>Weightage</th>
-                <th><input type="text" ></th>
-            </tr>
+
+        <button id="submitList">Add Weightage</button>
+        <div class="yourModels container d-flex text-white p-5">
+            <form id="form2" runat="server">
+                <div class="container">
+                    <table id="newModelTable" class="table table-bordered text-center text-uppercase">
+                        <!-- <tr id="securitiesTables" class="bg-primary text-white">
+                            <th>Security Name</th>
+                            <th>Weightage</th>
+                        </tr> -->
+
+                    </table>
+                </div>
+            </form>
         </div>
+        <button id="submitSecurities">Submit</button>
+
     </section>
     <script src="newmodel.js"></script>
 </body>

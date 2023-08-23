@@ -52,7 +52,7 @@ $(document).ready(function () {
           sessionStorage.setItem("token",JSON.parse(xhr.responseText).Value);
           console.log(JSON.parse(xhr.responseText));
           // alert(JSON.stringify(res));
-          // location.href="advisorHome.html";
+          location.href="advisorHome.html";
         },
         error: function (er) {
           alert("Incorrect Email or Password");
