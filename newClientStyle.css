@@ -88,6 +88,7 @@ form input[type="text"],
 form input[type="email"],
 form input[type="tel"],
 form textarea {
+    font-size:10px;
     width: 360px;
     padding: 10px;
     margin-bottom: 25px;
@@ -96,6 +97,8 @@ form textarea {
     background-color: #eaeaea;
     border-radius: 4px;
 }
+
+
 
 form button {
     text-align: center;
