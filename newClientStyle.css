@@ -116,11 +116,13 @@ form button {
 #Form1{
     width:400px;
     height:100vh;
+    font-size:60%;
     left:40px;
 }
 #Form2{
     width:400px;
     height:100vh;
+    font-size:40%;
     left:480px;
 }
 
@@ -128,6 +130,7 @@ form button {
 #Form3{
     width:400px;
     height:100vh;
+    font-size:60%;
     left:960px;
 }
 
