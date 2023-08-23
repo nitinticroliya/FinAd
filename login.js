@@ -25,7 +25,7 @@ $(document).ready(function () {
         // "PancardNo": pancardNo,
         // "Experience": experience,
         // "Username": username,
-        "Password": loginPassword,
+        "Password": loginPassword
       };
       console.log(JSON.stringify(loginCheck));
       // Minimum eight characters, at least one letter, one number and one special character
@@ -45,10 +45,14 @@ $(document).ready(function () {
           "Accept": "*",
           "Content-Type": "application/json"
         },
-        success: function (res) {
+        success: function (res,status, xhr) {
           alert("Logged in Successfully, Welcome");
+          
+         // console.log(JSON.parse(xhr.responseText).Value);
+          sessionStorage.setItem("token",JSON.parse(xhr.responseText).Value);
+          console.log(JSON.parse(xhr.responseText));
           // alert(JSON.stringify(res));
-          location.href="advisorHome.html";
+          // location.href="advisorHome.html";
         },
         error: function (er) {
           alert("Incorrect Email or Password");

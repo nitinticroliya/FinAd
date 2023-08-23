@@ -8,13 +8,15 @@ $(document).ready(function () {
             "Access-Control-Allow-Origin": "*",
             //    "Access-Control-Request-Method" : "*",
             "Accept": "*",
-            "Content-Type": "application/json"
+            "Content-Type": "application/json",
+            "Authorization" : "Bearer " + sessionStorage.token
         },
 
         success: function printData(res) {
             alert("Client list loaded Successfully");
             // console.log(res);
             res = JSON.parse(res);
+            console.log(res);
             for(var i=0; i<res.length; i++){
                 xyz(res[i].Name, res[i].Email, res[i].RiskProfile, res[i].SuggestedModel, "clientTables");
             }
