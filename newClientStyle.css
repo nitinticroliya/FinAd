@@ -52,34 +52,33 @@ nav ul li a:hover {
     align-items: end;
     width: 50%;
 }
-
-.container {
-    width: 400px;
-    height:800px;
-    margin:  auto;
-    padding: 30px;
-    padding-top: 10px; 
-    background-color:white;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
-    position:relative;
-    transition: 5s;
-    overflow: hidden;
-}
-
 h1 {
     color: #3c00a0;
     text-align: center;
+    justify-content: center;
     margin-bottom: 20px;
     padding-top: 20px;
 }
+.container {
+    width: 400px;
+    height: 80vh;
+    margin: auto;
+    padding: 30px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position:relative;
+    border-radius: 5px;
+    overflow: hidden;
+}
 
-  .container form{
-     max-height:max-content;  
-     position:absolute; 
+
+.container form{
+    max-height:max-content;  
+    position:absolute; 
 }  
 
-form label {font-weight: 400;
+form label {
+    font-weight: 400;
     color: black;
     display: block;
     margin-bottom: 5px;
@@ -88,12 +87,8 @@ form label {font-weight: 400;
 form input[type="text"],
 form input[type="email"],
 form input[type="tel"],
-/* form input[type="text"],   */
-
-
-
 form textarea {
-    width: 95%;
+    width: 360px;
     padding: 10px;
     margin-bottom: 25px;
     color: #999;
@@ -101,7 +96,6 @@ form textarea {
     background-color: #eaeaea;
     border-radius: 4px;
 }
-
 
 form button {
     text-align: center;
@@ -115,18 +109,24 @@ form button {
     border-radius: 20px;
     cursor: pointer;
 }
-/* #Form1{
-    left:-450px;
-} */
 
+#Form1{
+    width:400px;
+    height:100vh;
+    left:40px;
+}
 #Form2{
+    width:400px;
+    height:100vh;
     left:480px;
 }
 
 
-.hidden {
-    display: none;
-  }
+#Form3{
+    width:400px;
+    height:100vh;
+    left:960px;
+}
 
 .step-row{
     width:360px;
@@ -165,9 +165,16 @@ form button {
     border-left:20px solid #3c00a0;
 }
 
+p{
+    color:black;    
+}
+
 .btn-box{
     width:100%;
     margin:30px auto;
     text-align:center;
 }
 
+modelDropdown{
+    font-size :0.5rem;
+}
