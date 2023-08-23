@@ -1,118 +1,78 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="'utf-8">
-        <title>Advisor Registration</title>
-        <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/> -->
-        <link rel="stylesheet" href="signupStyle.css">
-        
-        <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-    </head>
-    <body>
-        <!-- <nav>
-            <div class="left"> FinAd: The best Advisor Portal there is
+<head>
+    <meta charset="'utf-8">
+    <title>Advisor Registration</title>
+    <link rel="stylesheet" href="signupStyle.css">
 
-            </div>
-            <div class="right">
-                <ul>
-                    <li><a href="home.html">Home</a></li>
-                    <li><a href="contactus.html">Contact Us</a></li>
-                    <li><a href="login.html">Log-In</a></li>
-                    <li><a href="signup.html">Sign-Up</a></li>
-                </ul>
-            </div>
-        </nav> -->
-        
-        <div class="container">
-            
-            <header>Advisor Signup</header>
-            
-            
-                <!-- <div class="step">
-                    <p>
-                        Basic
-                    </p>
-                    <div class="bullet">
-                        <span>1</span>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+</head>
+
+<body>
+
+    <!-- <div class="left"> FinAd: The best Advisor Portal there is</div>
+    <div class="right">
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="contactus.html">Contact Us</a></li>
+            <li><a href="login.html">Log-In</a></li>
+            <li><a href="signup.html">Sign-Up</a></li>
+        </ul>
+    </div> -->
+
+    <div class="container">
+
+        <header>Advisor Signup</header>
+        <div class="form-outer">
+            <form action="#">
+                <div class="page">
+                    <div class="field">
+                        <div class="label">
+                            Full Name
+                        </div>
+                        <input type="text" id="advisorName" required>
                     </div>
-                    <div class="check gas fa-check"></div>
-                </div> -->
-                <!-- <div class="step">
-                    <p>
-                        Contact
-                    </p>
-                    <div class="bullet">
-                        <span>2</span>
+                    <div class="field">
+                        <div class="label">
+                            Phone Number
+                        </div>
+                        <input type="number" id="advisorPhoneNo" required>
                     </div>
-                    <div class="check gas fa-check"></div>
-                </div> -->
-                <!-- <div class="step">
-                    <p>
-                        Professional
-                    </p>
-                    <div class="bullet">
-                        <span>3</span>
+                    <div class="field">
+                        <div class="label">
+                            E-mail
+                        </div>
+                        <input type="text" id="advisorEmail" required>
                     </div>
-                    <div class="check gas fa-check"></div>
-                </div> -->
-                <!-- <div class="step">
-                    <p>
-                        Submit
-                    </p>
-                    <div class="bullet">
-                        <span>4</span>
+                    <div class="field">
+                        <div class="label">
+                            Address
+                        </div>
+                        <input type="text" id="advisorAddress" required>
                     </div>
-                    <div class="check gas fa-check"></div>
-                </div> -->
-            
-            <div class="form-outer">
-                <form action="#">
-                    <div class="page">
-                        <div class="field">
-                            <div class="label">
-                                Full Name
-                            </div>
-                            <input type="text" id="advisorName" required>
+                    <div class="field">
+                        <div class="label">
+                            Username
                         </div>
-                        <div class="field">
-                            <div class="label" >
-                                Phone Number
-                            </div>
-                            <input type="number" id="advisorPhoneNo" required>
-                        </div>
-                        <div class="field">
-                            <div class="label" >
-                                E-mail
-                            </div>
-                            <input type="text" id="advisorEmail" required>
-                        </div>
-                        <div class="field">
-                            <div class="label" >
-                                Address
-                            </div>
-                            <input type="text" id="advisorAddress" required>
-                        </div>
-                        <div class="field">
-                            <div class="label"  >
-                                Username
-                            </div>
-                            <input type="text" id="advisorUsername" required>
-                        </div>
-                        <div class="field">
-                            <div class="label" >
-                                Password
-                            </div>
-                            <input type="password" id="advisorPassword" required>
-                        </div>
-                        <div class="field btns">
-                            <!-- <button class="prev-3 prev">Previous</button> -->
-                            <button onclick="window.location.href='login.html'" formaction="login.html" id="submitSignup" class="submit" >Submit</button>
-                        
-                        </div>
+                        <input type="text" id="advisorUsername" required>
                     </div>
-                </form>
-            </div>
+                    <div class="field">
+                        <div class="label">
+                            Password
+                        </div>
+                        <input type="password" id="advisorPassword" required>
+                    </div>
+                    <div class="field btns">
+                        <!-- <button class="prev-3 prev">Previous</button> -->
+                        <button onclick="window.location.href='login.html'" formaction="login.html" id="submitSignup"
+                            class="submit">Submit</button>
+
+                    </div>
+                </div>
+            </form>
         </div>
-        <script src="signup.js"></script>
-    </body>
+    </div>
+    <script src="signup.js"></script>
+</body>
+
 </html>

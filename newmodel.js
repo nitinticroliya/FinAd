@@ -43,10 +43,9 @@ function xyz(Security, Eid, Tid) {
     let inp = document.createElement("input");
     inp.setAttribute("type", "text");
     inp.setAttribute("id", Eid);
-
     d1.innerHTML = Security;
     document.getElementById(Tid).appendChild(r);
     document.getElementById(Tid).appendChild(d1);
     document.getElementById(Tid).appendChild(inp);
-    
+    console.log(inp);
 }
