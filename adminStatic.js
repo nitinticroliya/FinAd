@@ -1,6 +1,6 @@
 $(document).ready(function () {
     $.ajax({
-        url: "https://localhost:7143/existingClientsData",
+        url: "https://localhost:7143/allQuestions",
         type: 'GET',
         // added data type
         // data: JSON.stringify(newClientData),
@@ -9,7 +9,7 @@ $(document).ready(function () {
             //    "Access-Control-Request-Method" : "*",
             "Accept": "*",
             "Content-Type": "application/json",
-            "Authorization" : "Bearer " + sessionStorage.token
+            // "Authorization" : "Bearer " + sessionStorage.token
         },
 
         success: function printData(res) {
@@ -18,7 +18,7 @@ $(document).ready(function () {
             res = JSON.parse(res);
             console.log(res);
             for(var i=0; i<res.length; i++){
-                document.getElementById(res[i].id).value = res[i].Questions;
+                document.getElementById(res[i].ID).value = res[i].Questions;
             }
         },
         error: function (er) {
