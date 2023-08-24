@@ -16,7 +16,7 @@ $(document).ready(function () {
         },
 
         success: function printData(res) {
-            alert("Securities list loaded Successfully");
+            // alert("Securities list loaded Successfully");
             // console.log(res);
             res = JSON.parse(res);
             console.log(res);
@@ -102,6 +102,7 @@ $(document).ready(function () {
                     success: function (res) {
                         // alert("New Model added Successfully");
                         // alert(JSON.stringify(res));
+                        location.href="models.html";
                     },
                     error: function (er) {
                         alert("errrorr");

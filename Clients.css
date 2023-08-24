@@ -42,7 +42,20 @@ nav ul li a:hover {
     font-size: 1.02rem;
 }
 
-
+#clientList {
+    background-color: white;
+    text-decoration: none;
+    color: black;
+}
+#clientList a {
+    background-color: white;
+    text-decoration: none;
+    color: black;
+}
+/* a:hover {
+    color: rgb(128, 128, 199);
+    font-size: 1.02rem;
+} */
 
 .left {
     font-size: 2.05rem;
