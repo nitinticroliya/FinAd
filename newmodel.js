@@ -64,8 +64,6 @@ $(document).ready(function () {
         }
         if (sum != 100) {
             alert("Recheck the securities weightage");
-
-            console.log("sum:" + sum + " TemparraY:" + array);
         }
 
         else {

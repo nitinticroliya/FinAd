@@ -5,8 +5,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="adminStatic.css" />
-    <link rel="stylesheet" href="Style.css"/>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" 
+    <link rel="stylesheet" href="Style.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <title>Edit Static Data</title>
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
@@ -35,26 +35,42 @@
         </div>
         <div class="container">
             <table class="table table-bordered text-left">
-                <tr>
-                    <th>Question 1</th>
-                    <th><input class="questionSet" id="q1" type="text"></th>
-                </tr>
-                <tr>
-                    <th>Question 2</th>
-                    <th><input class="questionSet" id="q2" type="text"></th>
-                </tr>
-                <tr>
-                    <th>Question 3</th>
-                    <th><input class="questionSet" id="q3" type="text"></th>
-                </tr>
-                <tr>
-                    <th>Question 4</th>
-                    <th><input class="questionSet" id="q4" type="text"></th>
-                </tr>
+                <thead>
+                    <tr>
+                        <th>Question No.</th>
+                        <th>Question</th>
+                    </tr>
+                </thead>
+                <tbody id="QuestionTable">
+
+                </tbody>
             </table>
+            <button id="addQuestion">Add new Question</button>
+            <button id="resetQuestions">Reset Questions</button>
+
+            <br><br>
+            <button id="submitQuestion">Submit Questions and Add options</button>
+            <br><br>
+            <table class="table table-bordered text-left">
+                <thead>
+                    <tr>
+                        <th>Question</th>
+                        <th>Option</th>
+                        <th>Weightage</th>
+                    </tr>
+                </thead>
+                <tbody id="optionTable">
+
+                </tbody>
+            </table>
+            <br><br>
+            <button id="addOption">Add Option</button>
+            
+            <br><br>
+            <button id="submit">Submit</button>
         </div>
     </main>
-    <script src="adminStatic.js"/>
+    <script src="adminStatic.js"></script>>
 </body>
 
 </html>

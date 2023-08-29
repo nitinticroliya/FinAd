@@ -58,12 +58,22 @@ nav ul li a:hover {
     width: 50%;
 }
 
-th{
+td{
     max-width: 100px;
     border-width: 3px;
 }
 
 input{
-    width:400px;
+    width:95%;
     border:0px;
+}
+
+button{
+    background: #3c00a0;
+    margin-top: 20px;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1.25rem;
+    letter-spacing: 1px;
 }
