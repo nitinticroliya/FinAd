@@ -1,5 +1,6 @@
 $(document).ready(function () {
-  document.getElementById("Next1").addEventListener("click", function () {
+  document.getElementById("Next1").addEventListener("click", function (event) {
+    event.preventDefault();
 
     let Name = document.getElementById("name").value;
     let Email = document.getElementById("email").value;
@@ -52,9 +53,10 @@ $(document).ready(function () {
         data: JSON.stringify(modeldata),
         headers: {
           "Access-Control-Allow-Origin": "*",
-          //    "Access-Control-Request-Method" : "*",
+             "Access-Control-Request-Method" : "*",
           "Accept": "*",
           "Content-Type": "application/json"
+          "Authorization" : "Bearer " + sessionStorage.token
         },
         success: function addModelList(modelList) {
           alert("model list updated");
@@ -80,8 +82,10 @@ $(document).ready(function () {
     });
 
 
-    let model = document.getElementById("modelDropDown").value;
+    
     document.getElementById("submitBtn").addEventListener("click", function () {
+
+      let model = document.getElementById("modelDropDown").value;
       var newClientData = {
         "Name": Name,
         "PhoneNo": PhoneNo,
@@ -97,7 +101,6 @@ $(document).ready(function () {
       // if (pattern.test(passwordKey)) {
       //write the ajax code to send to backend then check the validation there as well.
       // alert("passed the password check " + passwordKey);
-
       $.ajax({
         url: "https://localhost:7143/newClientData",
         type: 'POST',
@@ -105,18 +108,31 @@ $(document).ready(function () {
         data: JSON.stringify(newClientData),
         headers: {
           "Access-Control-Allow-Origin": "*",
-          //    "Access-Control-Request-Method" : "*",
+             "Access-Control-Request-Method" : "*",
           "Accept": "*",
           "Content-Type": "application/json"
+          "Authorization" : "Bearer " + sessionStorage.token
         },
-        success: function (res) {
-          alert("New Client Successfully");
-          alert(JSON.stringify(res));
+        success: function newClient(res) {
+          alert("Added");
+          // modelList = JSON.parse(modelList);
+          // console.log(modelList);
+          // for (var i = 0; i < modelList.length; i++) {
+          //   document.getElementById("modelDropDown").appendChild(addModel(modelList[i].Model));
+          // }
+
+
+          // console.log(JSON.parse(xhr.responseText).Value);
+          //   sessionStorage.setItem("token",JSON.parse(xhr.responseText).Value);
+          //   console.log(JSON.parse(xhr.responseText));
+          // alert(JSON.stringify(res));
+          // location.href="Clients.html";
         },
         error: function (er) {
-          alert("errrorr");
-          alert(JSON.stringify(er));
+          alert("error");
+          // alert(JSON.stringify(er));
         }
+
       });
     });
   });

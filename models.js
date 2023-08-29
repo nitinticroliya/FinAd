@@ -6,10 +6,10 @@ $(document).ready(function () {
         // data: JSON.stringify(ModelsData),
         headers: {
             "Access-Control-Allow-Origin": "*",
-            //    "Access-Control-Request-Method" : "*",
+               "Access-Control-Allow-Headers" : "*",
             "Accept": "*",
             "Content-Type": "application/json",
-            // "Authorization" : "Bearer " + sessionStorage.token
+            "Authorization" : "Bearer " + sessionStorage.token
         },
 
         success: function printData(res) {
