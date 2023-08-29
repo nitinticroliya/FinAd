@@ -56,6 +56,7 @@ $(document).ready(function () {
 
     // sending Model data to backend
     document.getElementById("submitSecurities").addEventListener("click", function (event) {
+        event.preventDefault();
         var len = array.length;
         let sum = 0;
         console.log("sum:" + sum + " TemparraY:" + array);
@@ -95,9 +96,10 @@ $(document).ready(function () {
                     data: JSON.stringify(newModelData),
                     headers: {
                         "Access-Control-Allow-Origin": "*",
-                        //    "Access-Control-Request-Method" : "*",
+                           "Access-Control-Request-Method" : "*",
                         "Accept": "*",
-                        "Content-Type": "application/json"
+                        "Content-Type": "application/json",
+                        "Authorization" : "Bearer " + sessionStorage.token
                     },
                     success: function (res) {
                         // alert("New Model added Successfully");

@@ -1,5 +1,6 @@
 $(document).ready(function () {
-  document.getElementById("Next1").addEventListener("click", function () {
+  document.getElementById("Next1").addEventListener("click", function (event) {
+    event.preventDefault();
 
     let Name = document.getElementById("name").value;
     let Email = document.getElementById("email").value;
@@ -52,9 +53,10 @@ $(document).ready(function () {
         data: JSON.stringify(modeldata),
         headers: {
           "Access-Control-Allow-Origin": "*",
-          //    "Access-Control-Request-Method" : "*",
+             "Access-Control-Request-Method" : "*",
           "Accept": "*",
           "Content-Type": "application/json"
+          "Authorization" : "Bearer " + sessionStorage.token
         },
         success: function addModelList(modelList) {
           alert("model list updated");
@@ -106,9 +108,10 @@ $(document).ready(function () {
         data: JSON.stringify(newClientData),
         headers: {
           "Access-Control-Allow-Origin": "*",
-          //    "Access-Control-Request-Method" : "*",
+             "Access-Control-Request-Method" : "*",
           "Accept": "*",
           "Content-Type": "application/json"
+          "Authorization" : "Bearer " + sessionStorage.token
         },
         success: function newClient(res) {
           alert("Added");
