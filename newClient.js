@@ -55,7 +55,7 @@ $(document).ready(function () {
           "Access-Control-Allow-Origin": "*",
              "Access-Control-Request-Method" : "*",
           "Accept": "*",
-          "Content-Type": "application/json"
+          "Content-Type": "application/json",
           "Authorization" : "Bearer " + sessionStorage.token
         },
         success: function addModelList(modelList) {
@@ -110,7 +110,7 @@ $(document).ready(function () {
           "Access-Control-Allow-Origin": "*",
              "Access-Control-Request-Method" : "*",
           "Accept": "*",
-          "Content-Type": "application/json"
+          "Content-Type": "application/json",
           "Authorization" : "Bearer " + sessionStorage.token
         },
         success: function newClient(res) {
