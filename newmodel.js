@@ -9,10 +9,10 @@ $(document).ready(function () {
         // data: JSON.stringify(newClientData),
         headers: {
             "Access-Control-Allow-Origin": "*",
-            //    "Access-Control-Request-Method" : "*",
+            "Access-Control-Allow-Headers": "*",
             "Accept": "*",
             "Content-Type": "application/json",
-            // "Authorization" : "Bearer " + sessionStorage.token
+            "Authorization": "Bearer " + sessionStorage.token
         },
 
         success: function printData(res) {
@@ -20,30 +20,39 @@ $(document).ready(function () {
             // console.log(res);
             res = JSON.parse(res);
             console.log(res);
+            var head = document.createElement("thead");
+            var r = document.createElement("tr");
+            var h1 = document.createElement("th");
+            var h2 = document.createElement("th");
+            h1.innerHTML = "Security";
+            h2.innerHTML = "Asset Type";
+            r.appendChild(h1);
+            r.appendChild(h2);
+            head.appendChild(r);
+            document.getElementById("securityList").appendChild(head);
+            document.getElementById("securityList").appendChild(document.createElement("br"));
+            
+            var body = document.createElement("tbody");
+
+
             for (var i = 0; i < res.length; i++) {
-                var obj = securities(i + 1, res[i].Securities);
-                document.getElementById("securityList").appendChild(obj["input"]);
-                document.getElementById("securityList").appendChild(obj["label"]);
-                document.getElementById("securityList").appendChild(document.createElement("br"));
+                var obj = securities(i + 1, res[i].Securities, res[i].AssetClass);
+                body.appendChild(obj);
+                body.appendChild(document.createElement("br"));
             }
+            document.getElementById("securityList").appendChild(body);
 
             document.getElementById("submitList").addEventListener("click", () => {
 
                 var ModelTable = document.getElementById("newModelTable");
                 ModelTable.innerHTML = null;
 
-                let head = document.createElement("thead");
-                head.setAttribute("id", "securitiesTables");
-                head.setAttribute("class", "bg-primary text-white");
-                document.getElementById("newModelTable").appendChild(head);
-
-                for (var i = 1; i <= res.length; i++) {
-                    if (document.getElementById(i).checked) {
-                        securityTable(document.getElementById(i).value, i, "newModelTable");
+                for (var i = 0; i < res.length; i++) {
+                    if (document.getElementById(i+1).checked) {
+                        securityTable(res[i].Securities, res[i].AssetClass, i, "newModelTable");
                         array.push(i);
                     }
                 }
-                console.log(array);
             })
         },
         error: function (er) {
@@ -72,6 +81,7 @@ $(document).ready(function () {
                 let j = array.pop();
                 let ModelName = document.getElementById("modelName").value;
                 let RiskProfile = document.getElementById("risk").value;
+                let Asset = document.getElementById("Asset"+j).value;
                 let Securities = document.getElementById(j).value;
                 let Weightage = document.getElementById("box_" + j).value;
 
@@ -83,6 +93,7 @@ $(document).ready(function () {
                     "ModelName": ModelName,
                     "RiskProfile": RiskProfile,
                     "Securities": Securities,
+                    "AssetClass" : Asset,
                     "Weightage": Weightage
                 };
                 console.log(JSON.stringify(newModelData));
@@ -94,15 +105,15 @@ $(document).ready(function () {
                     data: JSON.stringify(newModelData),
                     headers: {
                         "Access-Control-Allow-Origin": "*",
-                           "Access-Control-Request-Method" : "*",
+                        "Access-Control-Request-Method": "*",
                         "Accept": "*",
                         "Content-Type": "application/json",
-                        "Authorization" : "Bearer " + sessionStorage.token
+                        "Authorization": "Bearer " + sessionStorage.token
                     },
                     success: function (res) {
                         // alert("New Model added Successfully");
                         // alert(JSON.stringify(res));
-                        location.href="models.html";
+                        location.href = "models.html";
                     },
                     error: function (er) {
                         alert("errrorr");
@@ -125,7 +136,10 @@ function riskProfile() {
 
 
 
-function securities(id, val) {
+function securities(id, val, val2) {
+    let r = document.createElement("tr");
+    let d1 = document.createElement("td");
+    let d2 = document.createElement("td");
     let inp = document.createElement("input");
     inp.setAttribute("type", "checkbox");
     inp.setAttribute("id", id);
@@ -133,23 +147,29 @@ function securities(id, val) {
     let labl = document.createElement("label");
     labl.setAttribute("for", id);
     labl.innerHTML = val;
-    var obj = {
-        "input": inp,
-        "label": labl
-    };
-    return obj;
+    d2.setAttribute("id", "Asset" + id)
+    d2.innerHTML = val2;
+    d1.appendChild(inp);
+    d1.appendChild(labl);
+    r.appendChild(d1);
+    r.appendChild(d2);
+    return r;
 }
 
-function securityTable(Security, Sid, Tid) {
+function securityTable(Security, AssetClass, Sid, Tid) {
     let r = document.createElement("tr");
+    let d2 = document.createElement("td");
+    d2.innerHTML = AssetClass;
     let d1 = document.createElement("td");
     d1.innerHTML = Security;
     let inp = document.createElement("input");
     inp.setAttribute("type", "number");
     inp.setAttribute("id", "box_" + Sid);
-    inp.setAttribute("min",0);
+    inp.setAttribute("min", 0);
+    r.appendChild(d2);
+    d1.appendChild(inp);
+    r.appendChild(d1);
+    document.getElementById(Tid).appendChild(document.createElement("br"));
     document.getElementById(Tid).appendChild(r);
-    document.getElementById(Tid).appendChild(d1);
-    document.getElementById(Tid).appendChild(inp);
-    console.log(inp);
+
 }

@@ -65,13 +65,6 @@ $(document).ready(function () {
           for (var i = 0; i < modelList.length; i++) {
             document.getElementById("modelDropDown").appendChild(addModel(modelList[i].Model));
           }
-
-
-          // console.log(JSON.parse(xhr.responseText).Value);
-          //   sessionStorage.setItem("token",JSON.parse(xhr.responseText).Value);
-          //   console.log(JSON.parse(xhr.responseText));
-          // alert(JSON.stringify(res));
-          // location.href="Clients.html";
         },
         error: function (er) {
           alert("error");

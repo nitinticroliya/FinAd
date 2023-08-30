@@ -31,7 +31,7 @@ $(document).ready(function (e) {
     // data: JSON.stringify(newClientData),
     headers: {
       "Access-Control-Allow-Origin": "*",
-      "Access-Control-Request-Method": "*",
+      "Access-Control-Allow-Header": "*",
       "Accept": "*",
       "Content-Type": "application/json",
       "Authorization": "Bearer " + sessionStorage.token

@@ -15,7 +15,7 @@
     <!-- <script src="jquery.table.marge.js"></script> -->
 
     <!-- <script src="/path/to/cdn/jquery.slim.min.js"></script> -->
-    <script src="row-merge-bundle.min.js"></script>
+    <!-- <script src="row-merge-bundle.min.js"></script> -->
     <title>Advisor Home Page</title>
 </head>
 
@@ -41,71 +41,43 @@
                 <button onclick="window.location.href='newmodel.html';" class="btn btn-primary col-2" type="submit">Add
                     new model</button>
         </div>
+        <div>
+            <label class="m-1 p-3 text-white" for="riskProfile">Choose Risk Profile</label>
+            <select name="riskProfile" id="riskProfile">
+
+            </select>
+            <button id="refreshButton">Refresh</button>
+
+            <label class="m-1 p-3 text-white" for="Model">Choose Model</label>
+            <select name="Model" id="Model">
+                
+            </select>
+            <button id="refreshButtonModel">Refresh</button>
+        </div>
         <form id="form1" runat="server">
             <div class="container">
                 <table id="tblModels" class="table table-bordered text-center text-uppercase">
                     <thead id="modelTables" class="bg-primary text-white">
                         <tr>
 
-                            <th>Risk Profile</th>
-                            <th>Model Name</th>
-                            <!-- <th>Securities</th>
-                            <th>Weightage</th> -->
+                            <th>Asset</th>
+                            <th>Securities</th>
+                            <th>Weightage</th>
                         </tr>
                     </thead>
                     <tbody></tbody>
                 </table>
             </div>
         </form>
-        <!-- <div class="listofclients p-3 m-3">
-            <div class="client1 text-white text-center d-flex py-4 " style="border-bottom: 1px solid white; font-size: 1.5rem;">
-                <div class="col-4">
-                    Model1
-                </div>
-                <div class="col-6">
-                    Risk Profile
-                </div>
-                <div class="col-2">
-                    <button class="btn btn-primary d-flex px-2 py-0 btn-white" style="position: relative; right: -4rem;">
-                       <h3>...</h3>
-                    </button>
-                </div>
-            </div>
-            <div class="client1 text-white text-center d-flex py-4 " style="border-bottom: 1px solid white; font-size: 1.5rem;">
-                <div class="col-4">
-                    Model2
-                </div>
-                <div class="col-6">
-                    Risk Profile
-                </div>
-                <div class="col-2">
-                    <button class="btn btn-primary d-flex px-2 py-0 btn-white" style="position: relative; right: -4rem;">
-                       <h3>...</h3>
-                    </button>
-                </div>
-            </div>
-            <div class="client1 text-white text-center d-flex py-4 " style="border-bottom: 1px solid white; font-size: 1.5rem;">
-                <div class="col-4">
-                    Model3
-                </div>
-                <div class="col-6">
-                    Risk Profile
-                </div>
-                <div class="col-2">
-                    <button class="btn btn-primary d-flex px-2 py-0 btn-white" style="position: relative; right: -4rem;">
-                       <h3>...</h3>
-                    </button>
-                </div>
-            </div>
-        </div> -->
+        
     </div>
     <script src="models.js">
-        $(function () {
-            // Apply the plugin 
-            var table = $('#tblModels').rowMerge({
-                excludedColumns: [3, 4],
-            });
-        });
+        // $(function () {
+        //     // Apply the plugin 
+        //     var table = $('#tblModels').rowMerge({
+        //         excludedColumns: [3, 4],
+        //     });
+        // });
     </script>
 </body>
 
