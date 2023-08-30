@@ -50,7 +50,7 @@ $(document).ready(function () {
     addOptionToTable('optionTable')
   })
   submit.addEventListener("click", function(){
-    addOptionToTable('optionTable')
+    // addOptionToTable('optionTable')
   })
     
 })

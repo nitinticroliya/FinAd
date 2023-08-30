@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="adminSecurities.css" />
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://kit.fontawesome.com/0410a2da07.js" crossorigin="anonymous"></script>
+    <title>Add Securities</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="left"> FinAd: The best Advisor Portal there is
+
+            </div>
+            <div class="right">
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="contactus.html">Contact Us</a></li>
+                    <li><a href="login.html">Log-In</a></li>
+                    <li><a href="signup.html">Sign-Up</a></li>
+                    <li><a href="adminLogin.html">Admin</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div id="page-wrapper">
+
+            <h1>Add Securities from External source</h1>
+            <br><br>
+            <label for="fileSelect">Spreadsheet</label>
+            <input id="fileSelect"  type="file" accept=".csv" /><br><br><br> 
+            <button id="submitButton">Submit</button>
+
+            <table id="securitiiesFromCSV"></table>
+        </div>
+    </main>
+
+    <script src="papaparse.min.js"></script>
+    <script src="adminSecurities.js"></script>
+
+</body>
+
+</html>
