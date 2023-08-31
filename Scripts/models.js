@@ -13,7 +13,7 @@ $(document).ready(function () {
       'Content-Type': 'application/json',
       Authorization: 'Bearer ' + sessionStorage.token
     },
-    success: function addRiskProfile (res, status, xhr) {
+    success: function addRiskProfile(res, status, xhr) {
       alert('Risk Profile list updated')
       alert(xhr.responseText)
       var RiskProfileList = JSON.parse(xhr.responseText)
@@ -36,6 +36,7 @@ $(document).ready(function () {
     .addEventListener('click', function () {
       var RiskProfile = document.getElementById('riskProfileDropDown').value
       console.log(RiskProfile)
+      document.getElementById("ModelDropDown").innerHTML = "";
 
       var modeldata = {
         RiskProfile: RiskProfile
@@ -54,11 +55,11 @@ $(document).ready(function () {
           'Content-Type': 'application/json',
           Authorization: 'Bearer ' + sessionStorage.token
         },
-        success: function addModelList (modelList) {
+        success: function addModelList(modelList) {
           alert('model list updated')
           // alert(xhr.responseText);
           modelList = JSON.parse(modelList)
-          console.log(modelList[0].Model)
+
           for (var i = 0; i < modelList.length; i++) {
             document
               .getElementById('ModelDropDown')
@@ -74,12 +75,11 @@ $(document).ready(function () {
 
   //Getting Data for specific model
 
-  document
-    .getElementById('refreshButtonModel')
-    .addEventListener('click', function () {
+  document.getElementById('refreshButtonModel').addEventListener('click', function () {
       var RiskProfile = document.getElementById('riskProfileDropDown').value
       // console.log(RiskProfile);
       var Model = document.getElementById('ModelDropDown').value
+      document.getElementById("modelTables").innerHTML = "";
       // console.log(SelectedModel);
       var modelInfo = {
         RiskProfile: RiskProfile,
@@ -100,7 +100,7 @@ $(document).ready(function () {
           Authorization: 'Bearer ' + sessionStorage.token
         },
 
-        success: function printData (res) {
+        success: function printData(res) {
           alert('Models list loaded Successfully')
           // console.log(res);
           res = JSON.parse(res)
@@ -130,7 +130,7 @@ $(document).ready(function () {
               Authorization: 'Bearer ' + sessionStorage.token
             },
 
-            success: function printData (res) {
+            success: function printData(res) {
               alert('Models list loaded Successfully')
               res = JSON.parse(res)
               console.log(res)
@@ -139,6 +139,7 @@ $(document).ready(function () {
                 data.labels.push(res[i].AssetType)
                 data.weightage.push(res[i].AssetSum)
               }
+              document.getElementById("pieChart").innerHTML = "";
               var canvasP = document.getElementById('pieChart')
               var ctxP = canvasP.getContext('2d')
               var myPieChart = new Chart(ctxP, {
@@ -192,7 +193,7 @@ $(document).ready(function () {
     })
 })
 
-function xyz (Asset, Securities, Weightage, id) {
+function xyz(Asset, Securities, Weightage, id) {
   let r = document.createElement('tr')
   let d1 = document.createElement('td')
   d1.innerHTML = Asset
@@ -207,14 +208,14 @@ function xyz (Asset, Securities, Weightage, id) {
   document.getElementById(id).appendChild(d3)
 }
 
-function addRiskProfile (val) {
+function addRiskProfile(val) {
   let opt = document.createElement('option')
   opt.setAttribute('value', val)
   opt.innerHTML = val
   return opt
 }
 
-function addModel (val) {
+function addModel(val) {
   let opt = document.createElement('option')
   opt.setAttribute('value', val)
   opt.innerHTML = val
