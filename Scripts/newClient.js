@@ -53,10 +53,10 @@ $(document).ready(function () {
         data: JSON.stringify(modeldata),
         headers: {
           "Access-Control-Allow-Origin": "*",
-             "Access-Control-Request-Method" : "*",
+          "Access-Control-Allow-Headers": "*",
           "Accept": "*",
           "Content-Type": "application/json",
-          "Authorization" : "Bearer " + sessionStorage.token
+          "Authorization": "Bearer " + sessionStorage.token
         },
         success: function addModelList(modelList) {
           alert("model list updated");
@@ -75,8 +75,9 @@ $(document).ready(function () {
     });
 
 
-    
-    document.getElementById("submitBtn").addEventListener("click", function () {
+
+    document.getElementById("submitBtn").addEventListener("click", function (e) {
+      e.preventDefault();
 
       let model = document.getElementById("modelDropDown").value;
       var newClientData = {
@@ -101,13 +102,14 @@ $(document).ready(function () {
         data: JSON.stringify(newClientData),
         headers: {
           "Access-Control-Allow-Origin": "*",
-             "Access-Control-Request-Method" : "*",
+          "Access-Control-Allow-Headers": "*",
           "Accept": "*",
           "Content-Type": "application/json",
-          "Authorization" : "Bearer " + sessionStorage.token
+          "Authorization": "Bearer " + sessionStorage.token
         },
         success: function newClient(res) {
-          alert("Added");
+          alert("Client Added Successfully");
+          location.href = "Clients.html"
           // modelList = JSON.parse(modelList);
           // console.log(modelList);
           // for (var i = 0; i < modelList.length; i++) {
@@ -123,7 +125,7 @@ $(document).ready(function () {
         },
         error: function (er) {
           alert("error");
-          // alert(JSON.stringify(er));
+          console.log(JSON.stringify(er));
         }
 
       });

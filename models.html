@@ -8,6 +8,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-core.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-pie.min.js"></script>
 
     <!-- <script src="https://code.jquery.com/jquery-1.12.4.min.js"
         integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous">
@@ -50,7 +52,7 @@
 
             <label class="m-1 p-3 text-white" for="Model">Choose Model</label>
             <select name="Model" id="Model">
-                
+
             </select>
             <button id="refreshButtonModel">Refresh</button>
         </div>
@@ -69,7 +71,12 @@
                 </table>
             </div>
         </form>
-        
+        <div class="container">
+            <div id="modelPieChart">
+
+            </div>
+        </div>
+
     </div>
     <script src="./Scripts/models.js"></script>
 </body>

@@ -111,6 +111,39 @@ $(document).ready(function () {
                 for (var i = 0; i < res.length; i++) {
                     xyz(res[i].Asset, res[i].Securities, res[i].Weightage, "modelTables");
                 }
+
+
+                // Making Pie Chart from data
+                $.ajax({
+                    url: "https://localhost:7143/modelPieChart",
+                    type: 'POST',
+                    data: JSON.stringify(modelInfo),
+                    // added data type
+                    // data: JSON.stringify(ModelsData),
+                    headers: {
+                        "Access-Control-Allow-Origin": "*",
+                        "Access-Control-Allow-Headers": "*",
+                        "Accept": "*",
+                        "Content-Type": "application/json",
+                        "Authorization": "Bearer " + sessionStorage.token
+                    },
+
+                    success: function printData(res) {
+                        alert("Models list loaded Successfully");
+                        res = JSON.parse(res);
+                        // console.log("readed")
+                        console.log(res);
+                        // for (var i = 0; i < res.length; i++) {
+                        //     xyz(res[i].Asset, res[i].Securities, res[i].Weightage, "modelTables");
+                        // }
+                    },
+
+
+                    error: function (er) {
+                        alert("errrorr");
+                        // alert(JSON.stringify(er));
+                    }
+                });
             },
 
 

@@ -79,9 +79,10 @@ $(document).ready(function () {
       delimiter: ',',
       skipEmptyLines: true,
       complete: results => {
+        console.log(results)
         tableCsv.update(results.data.slice(1), results.data[0])
-        console.log(results.data.slice(1))
-        console.log(results.data[0])
+        // console.log(results.data.slice(1))
+        // console.log(results.data[0])
       }
     })
   })

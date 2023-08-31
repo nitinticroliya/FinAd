@@ -105,7 +105,7 @@ $(document).ready(function () {
                     data: JSON.stringify(newModelData),
                     headers: {
                         "Access-Control-Allow-Origin": "*",
-                        "Access-Control-Allow-Method": "*",
+                        "Access-Control-Request-Method": "*",
                         "Accept": "*",
                         "Content-Type": "application/json",
                         "Authorization": "Bearer " + sessionStorage.token
