@@ -1,60 +1,75 @@
-var d5;
+var d5
 
-function xyz(Name, Email, RiskProfile, Model, id) {
-  let r = document.createElement("tr");
-  let d1 = document.createElement("td");
-  d1.innerHTML = Name;
-  let d2 = document.createElement("td");
-  d2.innerHTML = Email;
-  let d3 = document.createElement("td");
-  d3.innerHTML = RiskProfile;
-  let d4 = document.createElement("td");
-  d4.innerHTML = Model;
-  d5 = document.createElement("a");
-  d5.setAttribute("id", Email);
-  d5.setAttribute("href", "clients.html");
-  d5.innerHTML = "Delete";
-  console.log(d5);
-  document.getElementById(id).appendChild(r);
-  document.getElementById(id).appendChild(d1);
-  document.getElementById(id).appendChild(d2);
-  document.getElementById(id).appendChild(d3);
-  document.getElementById(id).appendChild(d4);
-  document.getElementById(id).appendChild(d5);
+function xyz (Name, Email, RiskProfile, Model, id) {
+  let r = document.createElement('tr')
+  let d1 = document.createElement('td')
+  d1.innerHTML = Name
+  let d2 = document.createElement('td')
+  d2.innerHTML = Email
+  let d3 = document.createElement('td')
+  d3.innerHTML = RiskProfile
+  let d4 = document.createElement('td')
+  d4.innerHTML = Model
+  d5 = document.createElement('a')
+  d5.setAttribute('id', Email)
+  d5.setAttribute('href', 'clients.html')
+  d5.innerHTML = 'Delete'
+  console.log(d5)
+  document.getElementById(id).appendChild(r)
+  document.getElementById(id).appendChild(d1)
+  document.getElementById(id).appendChild(d2)
+  document.getElementById(id).appendChild(d3)
+  document.getElementById(id).appendChild(d4)
+  document.getElementById(id).appendChild(d5)
 }
 
 $(document).ready(function (e) {
-  $.ajax({
-    url: "https://localhost:7143/existingClientsData",
-    type: 'GET',
-    // added data type
-    // data: JSON.stringify(newClientData),
-    headers: {
-      "Access-Control-Allow-Origin": "*",
-      "Access-Control-Allow-Header": "*",
-      "Accept": "*",
-      "Content-Type": "application/json",
-      "Authorization": "Bearer " + sessionStorage.token
-    },
+  // $.ajax({
+  //   url: "https://localhost:7143/existingClientsData",
+  //   type: 'GET',
+  //   // added data type
+  //   // data: JSON.stringify(newClientData),
+  //   headers: {
+  //     "Access-Control-Allow-Origin": "*",
+  //     "Access-Control-Allow-Header": "*",
+  //     "Accept": "*",
+  //     "Content-Type": "application/json",
+  //     "Authorization": "Bearer " + sessionStorage.token
+  //   },
 
-    success: function printData(res) {
-      alert("Client list loaded Successfully");
-      // console.log(res);
-      res = JSON.parse(res);
-      console.log(res);
-      for (var i = 0; i < res.length; i++) {
-        xyz(res[i].Name, res[i].Email, res[i].RiskProfile, res[i].SuggestedModel, "clientList");
-      }
-    },
+  //   success: function printData(res) {
+  //     alert("Client list loaded Successfully");
+  //     // console.log(res);
+  //     res = JSON.parse(res);
+  //     console.log(res);
+  //     for (var i = 0; i < res.length; i++) {
+  //       xyz(res[i].Name, res[i].Email, res[i].RiskProfile, res[i].SuggestedModel, "clientList");
+  //     }
+  //   },
 
-
-    error: function (er) {
-      alert("errrorr");
-      alert(JSON.stringify(er));
-    }
-  });
-
-
+  //   error: function (er) {
+  //     alert("errrorr");
+  //     alert(JSON.stringify(er));
+  //   }
+  // });
+  ClientName = document.getElementById('ClientNameInTable')
+  ClientEmail = document.getElementById('ClientEmailInTable')
+  ClientContact = document.getElementById('ClientContactInTable')
+  ClientAadhar = document.getElementById('ClientAadharInTable')
+  ClientPAN = document.getElementById('ClientPANInTable')
+  ClientRisk = document.getElementById('ClientRiskInTable')
+  ClientModel = document.getElementById('ClientModelInTable')
+  var res = ['c1', 'c2', 'c3', 'c4', 'c5', 'c6', 'c7', 'c8']
+  for (var i = 0; i < res.length; i++) {
+    document.getElementById('ClientDropDown').appendChild(addClient(res[i]))
+  }
+  console.log(document.getElementById('ClientDropDown').value)
+  document
+    .getElementById('refreshButton')
+    .addEventListener('click', function (e) {
+      e.preventDefault()
+      ClientName.innerHTML = document.getElementById('ClientDropDown').value
+    })
 
   // let Email = getElementById("Email").value;
   // var clientDelete = {
@@ -89,5 +104,15 @@ $(document).ready(function (e) {
   //   }
 
   // });
+<<<<<<< HEAD
 });
+=======
+})
+>>>>>>> 85f0bb495c8a630c9e1f93f9d8a481307455886e
 
+function addClient (val) {
+  let opt = document.createElement('option')
+  opt.setAttribute('value', val)
+  opt.innerHTML = val
+  return opt
+}

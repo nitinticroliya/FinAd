@@ -70,3 +70,7 @@ nav ul li a:hover {
     align-items: end;
     width: 50%;
 }
+
+table{
+    border-width: 10px;
+}
