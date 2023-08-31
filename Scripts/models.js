@@ -147,7 +147,7 @@ $(document).ready(function () {
                   labels: data.labels,
                   datasets: [
                     {
-                      data: data.population,
+                      data: data.weightage,
                       backgroundColor: [
                         '#64B5F6',
                         '#FFD54F',
