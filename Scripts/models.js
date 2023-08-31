@@ -58,7 +58,7 @@ $(document).ready(function () {
                 alert("model list updated");
                 // alert(xhr.responseText);
                 modelList = JSON.parse(modelList);
-                console.log(modelList);
+                console.log(modelList[0].Model);
                 for (var i = 0; i < modelList.length; i++) {
                     document.getElementById("ModelDropDown").appendChild(addModel(modelList[i].Model));
                 }

@@ -104,11 +104,7 @@ $(document).ready(function (e) {
   //   }
 
   // });
-<<<<<<< HEAD
 });
-=======
-})
->>>>>>> 85f0bb495c8a630c9e1f93f9d8a481307455886e
 
 function addClient (val) {
   let opt = document.createElement('option')
