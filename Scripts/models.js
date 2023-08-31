@@ -21,7 +21,7 @@ $(document).ready(function () {
             var RiskProfileList = JSON.parse(xhr.responseText);
             console.log(RiskProfileList);
             for (var i = 0; i < RiskProfileList.length; i++) {
-                document.getElementById("riskProfile").appendChild(addModel(RiskProfileList[i].RiskProfile));
+                document.getElementById("riskProfileDropDown").appendChild(addModel(RiskProfileList[i].RiskProfile));
             }
         },
         error: function (er) {
@@ -34,7 +34,7 @@ $(document).ready(function () {
 
     // getting Models list for specific Risk Profile
     document.getElementById("refreshButton").addEventListener("click", function () {
-        var RiskProfile = document.getElementById("riskProfile").value;
+        var RiskProfile = document.getElementById("riskProfileDropDown").value;
         console.log(RiskProfile);
 
         var modeldata = {
@@ -60,7 +60,7 @@ $(document).ready(function () {
                 modelList = JSON.parse(modelList);
                 console.log(modelList);
                 for (var i = 0; i < modelList.length; i++) {
-                    document.getElementById("Model").appendChild(addModel(modelList[i].Model));
+                    document.getElementById("ModelDropDown").appendChild(addModel(modelList[i].Model));
                 }
             },
             error: function (er) {
@@ -78,9 +78,9 @@ $(document).ready(function () {
     //Getting Data for specific model
 
     document.getElementById("refreshButtonModel").addEventListener("click", function () {
-        var RiskProfile = document.getElementById("riskProfile").value;
+        var RiskProfile = document.getElementById("riskProfileDropDown").value;
         // console.log(RiskProfile);
-        var Model = document.getElementById("Model").value;
+        var Model = document.getElementById("ModelDropDown").value;
         // console.log(SelectedModel);
         var modelInfo = {
             "RiskProfile": RiskProfile,
@@ -112,8 +112,6 @@ $(document).ready(function () {
                     xyz(res[i].Asset, res[i].Securities, res[i].Weightage, "modelTables");
                 }
             },
-
-
             error: function (er) {
                 alert("errrorr");
                 // alert(JSON.stringify(er));
