@@ -131,7 +131,7 @@ $(document).ready(function () {
             },
 
             success: function printData(res) {
-              alert('Models list loaded Successfully')
+              // alert('Models list loaded Successfully')
               res = JSON.parse(res)
               console.log(res)
               var data = { labels: [], weightage: [] }

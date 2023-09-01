@@ -36,7 +36,7 @@ $(document).ready(function () {
 
 
             for (var i = 0; i < res.length; i++) {
-                var obj = securities(i + 1, res[i].Securities, res[i].AssetClass);
+                var obj = securities(i, res[i].Securities, res[i].AssetClass);
                 body.appendChild(obj);
                 body.appendChild(document.createElement("br"));
             }
@@ -48,7 +48,7 @@ $(document).ready(function () {
                 ModelTable.innerHTML = null;
 
                 for (var i = 0; i < res.length; i++) {
-                    if (document.getElementById(i+1).checked) {
+                    if (document.getElementById("check_"+i).checked) {
                         securityTable(res[i].Securities, res[i].AssetClass, i, "newModelTable");
                         array.push(i);
                     }
@@ -81,8 +81,8 @@ $(document).ready(function () {
                 let j = array.pop();
                 let ModelName = document.getElementById("modelName").value;
                 let RiskProfile = document.getElementById("risk").value;
-                let Asset = document.getElementById("Asset"+j).value;
-                let Securities = document.getElementById(j).value;
+                let Asset = document.getElementById("check_"+j).getAttribute("class");
+                let Securities = document.getElementById("check_"+j).value;
                 let Weightage = document.getElementById("box_" + j).value;
 
                 // let ModelName = document.getElementById("modelName").value;
@@ -142,10 +142,12 @@ function securities(id, val, val2) {
     let d2 = document.createElement("td");
     let inp = document.createElement("input");
     inp.setAttribute("type", "checkbox");
-    inp.setAttribute("id", id);
+    inp.setAttribute("id", "check_"+id);
+    inp.setAttribute("class", val2);
+    
     inp.setAttribute("value", val);
     let labl = document.createElement("label");
-    labl.setAttribute("for", id);
+    labl.setAttribute("for", "check_"+id);
     labl.innerHTML = val;
     d2.setAttribute("id", "Asset" + id)
     d2.innerHTML = val2;
@@ -159,8 +161,13 @@ function securities(id, val, val2) {
 function securityTable(Security, AssetClass, Sid, Tid) {
     let r = document.createElement("tr");
     let d2 = document.createElement("td");
+    d2.setAttribute("id", "a_"+Sid);
+    d2.setAttribute("value", AssetClass);
+    
     d2.innerHTML = AssetClass;
     let d1 = document.createElement("td");
+    d1.setAttribute("id", Sid);
+    d1.setAttribute("value", Security);
     d1.innerHTML = Security;
     let inp = document.createElement("input");
     inp.setAttribute("type", "number");

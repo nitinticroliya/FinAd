@@ -9,7 +9,7 @@ $(document).ready(function () {
     let address = document.getElementById("advisorAddress").value;
     // let pancardNo = document.getElementById("advisorPancard").value;
     // let experience = document.getElementById("advisorExp").value;
-    let username = document.getElementById("advisorUsername").value;
+    // let username = document.getElementById("advisorUsername").value;
     let password = document.getElementById("advisorPassword").value;
 
     var credentials = {
@@ -21,7 +21,7 @@ $(document).ready(function () {
       "Address": address,
       // "PancardNo": pancardNo,
       // "Experience": experience,
-      "Username": username,
+      // "Username": username,
       "Password": password,
     };
     console.log(JSON.stringify(credentials));

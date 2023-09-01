@@ -2,7 +2,7 @@ class TableCsv {
   /**
    * @param {HTMLTableElement} root The table element which will display the CSV data.
    */
-  constructor (root) {
+  constructor(root) {
     this.root = root
   }
 
@@ -12,7 +12,7 @@ class TableCsv {
    * @param {string[][]} data A 2D array of data to be used as the table body
    * @param {string[]} headerColumns List of headings to be used
    */
-  update (data, headerColumns = []) {
+  update(data, headerColumns = []) {
     this.clear()
     this.setHeader(headerColumns)
     this.setBody(data)
@@ -21,7 +21,7 @@ class TableCsv {
   /**
    * Clears all contents of the table (incl. the header).
    */
-  clear () {
+  clear() {
     this.root.innerHTML = ''
   }
 
@@ -30,7 +30,7 @@ class TableCsv {
    *
    * @param {string[]} headerColumns List of headings to be used
    */
-  setHeader (headerColumns) {
+  setHeader(headerColumns) {
     this.root.insertAdjacentHTML(
       'afterbegin',
       `
@@ -48,7 +48,7 @@ class TableCsv {
    *
    * @param {string[][]} data A 2D array of data to be used as the table body
    */
-  setBody (data) {
+  setBody(data) {
     const rowsHtml = data.map(row => {
       return `
                 <tr>
@@ -106,26 +106,32 @@ $(document).ready(function () {
           Authorization: 'Bearer ' + sessionStorage.token
         },
 
-        success: function printData (res) {
+        success: function printData(res) {
           alert('Securities Deleted Successfully')
+          console.log(securityData);
+          for(var i=0; i<securityData.length; i++) {
+            var data={
+              "AssetClass" : securityData[i][0],
+              "Securities" : securityData[i][1]
+            }
 
-          // Making Pie Chart from data
+            // adding securities to backend
           $.ajax({
             url: 'https://localhost:7143/addAllSecurities',
             type: 'POST',
-            data: JSON.stringify(securityData),
+            data: JSON.stringify(data),
             // added data type
             // data: JSON.stringify(ModelsData),
             headers: {
               'Access-Control-Allow-Origin': '*',
-              'Access-Control-Allow-Headers': '*',
+              // 'Access-Control-Allow-Headers': '*',
               Accept: '*',
               'Content-Type': 'application/json',
-              Authorization: 'Bearer ' + sessionStorage.token
+              // Authorization: 'Bearer ' + sessionStorage.token
             },
 
-            success: function printData (res) {
-              alert('Securities Added Successfully')
+            success: function printData(res) {
+              // alert('Securities Added Successfully')
             },
 
             error: function (er) {
@@ -133,6 +139,8 @@ $(document).ready(function () {
               // alert(JSON.stringify(er));
             }
           })
+          }
+          
         },
         error: function (er) {
           alert('errrorr')
