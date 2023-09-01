@@ -78,8 +78,9 @@ $(document).ready(function () {
 
     document.getElementById("submitBtn").addEventListener("click", function (e) {
       e.preventDefault();
-
+      console.log(category);
       let model = document.getElementById("modelDropDown").value;
+      // let category = document.getElementById("category").value;
       var newClientData = {
         "Name": Name,
         "PhoneNo": PhoneNo,

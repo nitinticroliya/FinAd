@@ -186,38 +186,47 @@ $(document).ready(function (e) {
   // };
   // console.log(JSON.stringify(clientDelete));
 
-  // $.ajax({
-  //   url: "https://localhost:7143/deleteClientsData",
-  //   type: 'POST',
-  //   // added data type
-  //   data: JSON.stringify(clientDelete),
-  //   headers: {
-  //     "Access-Control-Allow-Origin": "*",
-  //     "Access-Control-Request-Method": "*",
-  //     "Accept": "*",
-  //     "Content-Type": "application/json",
-  //     "Authorization": "Bearer " + sessionStorage.token
-  //   },
-  //   success: function (res, status, xhr) {
-  //     alert("Client Deleted Successfully");
+  document.getElementById("deleteButton").addEventListener("click", function (e) {
+    e.preventDefault();
+    var Email = document.getElementById("ClientDropDown").value
+    var DeleteClient = {
+      "Email": Email
+    }
+    $.ajax({
+      url: "https://localhost:7143/deleteClientsData",
+      type: 'POST',
+      // added data type
+      data: JSON.stringify(DeleteClient),
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Request-Method": "*",
+        "Accept": "*",
+        "Content-Type": "application/json",
+        "Authorization": "Bearer " + sessionStorage.token
+      },
+      success: function (res, status, xhr) {
+        alert("Client Deleted Successfully");
 
-  //     // console.log(JSON.parse(xhr.responseText).Value);
-  //     //   sessionStorage.setItem("token",JSON.parse(xhr.responseText).Value);
-  //     //   console.log(JSON.parse(xhr.responseText));
-  //     // alert(JSON.stringify(res));
-  //     location.href = "Clients.html";
-  //   },
-  //   error: function (er) {
-  //     alert("error");
-  //     // alert(JSON.stringify(er));
-  //   }
+        // console.log(JSON.parse(xhr.responseText).Value);
+        //   sessionStorage.setItem("token",JSON.parse(xhr.responseText).Value);
+        //   console.log(JSON.parse(xhr.responseText));
+        // alert(JSON.stringify(res));
+        location.href = "Clients.html";
+      },
+      error: function (er) {
+        alert("client is not deleted");
+        // alert(JSON.stringify(er));
+      }
 
-  // });
-});
+      // });
+    });
+  });
 
-function addClient(val) {
-  let opt = document.createElement('option')
-  opt.setAttribute('value', val)
-  opt.innerHTML = val
-  return opt
-}
+
+  function addClient(val) {
+    let opt = document.createElement('option')
+    opt.setAttribute('value', val)
+    opt.innerHTML = val
+    return opt
+  }
+})
